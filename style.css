@@ -1,0 +1,88 @@
+body{
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f8efe6;
+    color:#333 ;
+}
+header{
+  background-color: #f8efe6;
+  color:black;
+  padding: 20px;
+  text-align: center;  
+
+}
+
+nav{
+     display: flex;
+     justify-content: center;
+     background-color: #f8efe6;
+     padding: 10px;
+}
+
+nav a{
+    margin:  0 15px;
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+}
+.hero{
+    text-align: center;
+    padding: 50px 20px;
+    background-image: url(images/img3.jpg);
+    background-size: cover;
+    background-position: center;
+    color: white;
+}
+.hero h1{
+    font-size: 40px;
+    margin-bottom: 10px;
+
+}
+.hero p{
+    font-size: 18px
+}
+.section{
+    padding: 40px 20px;
+    text-align: center;
+}
+.recipes{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250PX, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+.card{
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0, 0,1);
+}
+.card img{
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+footer{
+    background-color: #f8efe6;
+    color: black;
+    text-align: center;
+    padding: 20px;
+}
+.logoleft{
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+}
+.logoright{
+     width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: absolute;
+    top: 10px;
+    right: 10px;
+}

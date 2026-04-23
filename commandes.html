@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        .commande{
+            padding: 60px 20px;
+            background: linear-gradient(135deg,#fff5ee, #ffe0cc);
+            text-align: center;
+            font-family: 'Segoe UI', sans-serif;
+        }
+        .commande h2{
+            font-size: 2.2rem;
+            margin-bottom: 30px;
+            color: #2c2c2c;
+            position: relative;
+        }
+        .commande h2::after{
+            content: "";
+            width: 70px;
+            height: 4px;
+            background: #ff6b00;
+            display: block;
+            margin: 10px auto 0;
+            border-radius: 2px;
+        }
+        .commande-form{
+            max-width: 500px;
+            margin: auto;
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0,0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            animation: fadeIn 0.6s ease;
+        }
+        @keyframes fadeIn{
+            from{
+                opacity: 0;
+                transform: translateY(0);
+            }
+        }
+        .commande-form input,
+        .commande-form select,
+        .commande-form textarea {
+            padding: 12px;
+            border-radius: 10px;
+            border: 1px solid #ddd;
+            font-size: 1rem;
+            outline: none;
+            transition: 0.3s;
+        }
+        .commande-form input:focus,
+        .commande-form select:focus,
+        .commande-form textarea:focus{
+            border-color: #ff6b00;
+            box-shadow: 0 0 8px rgba(255, 107, 0, 0.3);
+        }
+        .commande-form button{
+            padding: 14px;
+            border: none;
+            border-radius: 10px;
+            background: linear-gradient(135deg,#ff6b00, #ff8533);
+            color: white;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: 0.3s;
+            font-weight: bold;
+        }
+        .commande-form button:hover{
+            transform: scale(1.05);
+            box-shadow: 0 10px 25px rgba(0,0, 0, 0.2);
+        }
+        .commande-form button:active{
+            transform: scale(0.98);
+        }
+        @media (max-width: 600px){
+            .commande-form{
+                padding: 20px;
+            }
+            .commande h2{
+                font-size: 1.7rem;
+            }
+        }
+    </style>
+    <title>commandes</title>
+</head>
+<body>
+    <section class="commande">
+        <h2>Passer une commande</h2>
+
+        <form class="commande-form" onsubmit="envoyerWhatsApp(event)">
+            <input type="text" id="nom" placeholder="Votre nom" required>
+            <input type="tel" id="telephone" placeholder=" Numéro de téléphone" required>
+            <input type="text" id="adresse" placeholder="Adresse de livraison" required>
+
+            <select  id="service" required>
+                <option value="">Choisir un service </option>
+                <option >Livraison de repas</option>
+                <option >Service traiteur </option>
+
+            </select>
+            <textarea  id="commande" placeholder="Votre commande (plats, quantités,...)" rows="4">
+
+            </textarea>
+         <button type="submit">Commander maintenant</button>
+        </form>
+
+    </section>
+    <script>
+        function envoyerWhatsApp(event) {
+            event.preventDefault();
+            let nom= 
+            document.getElementById("nom").value;
+            let telephone = 
+            document.getElementById("telephone").value;
+            let adresse= 
+            document.getElementById("adresse").value;
+            let service= 
+            document.getElementById("service").value;
+            let commande= 
+            document.getElementById("commande").value;
+            let message= `Bonjour , je souhaite passer une commande :
+            nom : ${nom}
+            telephone : ${telephone}
+            adresse: ${adresse}
+            service: ${service}
+            commande: ${commande} `
+            let url =
+            "https://wa.me/243978443720?text=" + encodeURIComponent(message);
+            window.open(url, "_blank");
+
+
+
+
+
+        }
+    </script>
+</body>
+</html>
